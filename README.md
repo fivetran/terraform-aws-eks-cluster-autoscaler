@@ -1,3 +1,14 @@
+# Fivetran specific modifications
+Some Donkey clusters have long names and resources in this module add suffixes to cluster names and they hit AWS name limits, e.g.
+```
+Error: expected length of name to be in the range (1 - 64), got supporting-services-ap-southeast-2-just-gopher-1-cluster-autoscaler
+
+  on .terraform/modules/ss_cluster_autoscaler/iam.tf line 62, in resource "aws_iam_role" "cluster_autoscaler":
+  62:   name               = "${var.cluster_name}-cluster-autoscaler"
+```
+
+This fork addresses this problem until all our clusters use shorter cluster names.
+
 # AWS EKS cluster autoscaler Terraform module
 
 [![labyrinth labs logo](ll-logo.png)](https://lablabs.io/)
