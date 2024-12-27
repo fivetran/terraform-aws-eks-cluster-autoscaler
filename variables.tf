@@ -42,11 +42,11 @@ variable "helm_repo_url" {
   description = "Helm repository"
 }
 
-variable "helm_create_namespace" {
-  type        = bool
-  default     = true
-  description = "Create the namespace if it does not yet exist"
-}
+# variable "helm_create_namespace" {
+#   type        = bool
+#   default     = true
+#   description = "Create the namespace if it does not yet exist"
+# }
 
 variable "k8s_namespace" {
   type        = string
